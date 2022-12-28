@@ -1,0 +1,7 @@
+.env
+migrations/
+__pycache__/
+media/
+static/
+*.bat
+db.sqlite3

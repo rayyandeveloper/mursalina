@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <!-- <link rel="stylesheet" href="./FA5PRO/css/all.min.css"> -->
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+    <div class="container" id="cont">
+        <div class="row">
+            <div class="col1">
+                <a href="/" style="text-decoration: none ; color: #000 !important;"><div class="logo noselect"><span>M</span>ursa<span>l</span>ina</div></a>
+            </div>
+            <div class="col2">
+                <div class="search">
+                    <form method="get">
+                        <input type="text" placeholder="Search here..." name="q">
+                        <button type="submit"><i class="fas fa-search fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col3">
+                <div class="profile">
+                    <div class="box"><a href="">M</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="menu">
+        <div class="left-side">
+            <div class="box active noselect">
+                <span><i class="fas fa-home"></i></span>
+                <p>Bosh sahifa</p>
+            </div>
+            <div class="box noselect">
+                <span><i class="far fa-address-card"></i></span>
+                <p>Litlar</p>
+            </div>
+            <div class="box noselect">
+                <span><i class="fas fa-user"></i></span>
+                <p>Talabalar</p>
+            </div>
+            <div class="box noselect">
+                <span><i class="fas fa-chalkboard-teacher"></i></span>
+                <p>O'qituvchilar</p>
+            </div>
+            <div class="box noselect">
+                <span><i class="fas fa-trash-restore"></i></span>
+                <p>Arxiv</p>
+            </div>
+            <div class="box active noselect">
+                <span><i class="fa-sharp fa-solid fa-gear"></i></i></span>
+                <p>Sozlamalar</p>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="top-filter">
+                <div class="filter"></div> <button class="add-button">Talaba qo'shish</button>
+            </div>
+            <div class="main">
+                <div class="users">
+                    <div class="user">
+                        <span>1</span>
+                        <span>Abdusalomov Abdurazzoq</span>
+                        <span>2006.04.02</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./FA5PRO/js/all.min.js"></script>
+</body>
+</html>
