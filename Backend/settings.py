@@ -134,6 +134,6 @@ if DEBUG:
     MEDIA_ROOT = 'media/'
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    MEDIA_ROOT = '/home/mursalina/mursalina/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
