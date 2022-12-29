@@ -1,25 +1,33 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'index.html')
+    context = {'page_name' : 'home'}
+    return render(request, 'home-page.html', context=context)
 
 
-def login(request):
-    if request.method == 'POST':
-        pass
-    return render(request, 'index.html')
+def lits(request):
+    context = {'page_name' : 'lits'}
+    return render(request, 'lits.html', context=context)
 
 
-def logout(request):
-    if request.method == 'POST':
-        pass
-    return render(request, 'index.html')
+def peoples(request):
+    context = {'page_name' : 'peoples'}
+    return render(request, 'peoples.html', context=context)
 
 
-def register(request):
-    if request.method == 'POST':
-        pass
-    return render(request, 'index.html')
+def teachers(request):
+    context = {'page_name' : 'teachers'}
+    return render(request, 'teachers.html', context=context)
+
+
+def settings(request):
+    context = {'page_name' : 'settings'}
+    return render(request, 'settings.html', context=context)
+
+def trash(request):
+    context = {'page_name' : 'trash'}
+    return render(request, 'trash.html', context=context)
+
 
 
 def search(request):

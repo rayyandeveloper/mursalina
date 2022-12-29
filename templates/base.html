@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mursalin | Bosh sahifa</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="./FA5PRO/css/all.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container" id="cont">
+        <div class="row">
+            <div class="col1">
+                <a href="/" style="text-decoration: none ; color: #000 !important;">
+                    <div class="logo noselect"><span>M</span>ursa<span>l</span>ina</div>
+                </a>
+            </div>
+            <div class="col2">
+                <div class="search">
+                    <form method="get">
+                        <input type="text" placeholder="Search here..." name="q">
+                        <button type="submit"><i
+                                class="fas fa-search fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col3">
+                <div class="profile">
+                    <div class="box"><a href="">M</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="menu">
+        <div class="left-side">
+            <a href="{% url 'home-page' %}">
+                <div class="box noselect {% if page_name == 'home' %} active {% endif %} ">
+                    <span><i class="fas fa-home"></i></span>
+                    <p>Bosh sahifa</p>
+                </div>
+            </a>
+            </a>
+            <a href="{% url 'lits-page' %}">
+                <div class="box noselect {% if page_name == 'lits' %} active {% endif %} ">
+                    <span><i class="far fa-address-card"></i></span>
+                    <p>Litlar</p>
+                </div>
+            </a>
+            <a href="{% url 'peoples-page' %}">
+                <div class="box noselect {% if page_name == 'peoples' %} active {% endif %} ">
+                    <span><i class="fas fa-user"></i></span>
+                    <p>Talabalar</p>
+                </div>
+            </a>
+            <a href="{% url 'teachers-page' %}">
+                <div class="box noselect {% if page_name == 'teachers' %} active {% endif %} ">
+                    <span><i class="fas fa-chalkboard-teacher"></i></span>
+                    <p>O'qituvchilar</p>
+                </div>
+            </a>
+            <a href="{% url 'trash-page' %}">
+                <div class="box noselect {% if page_name == 'trash' %} active {% endif %} ">
+                    <span><i class="fas fa-trash-restore"></i></span>
+                    <p>Arxiv</p>
+                </div>
+            </a>
+            <a href="{% url 'settings-page' %}">
+                <div class="box noselect {% if page_name == 'settings' %} active {% endif %} ">
+                    <span><i class="fa-sharp fa-solid fa-gear"></i></i></span>
+                    <p>Sozlamalar</p>
+                </div>
+            </a>
+        </div>
+        <div class="right-side">
+            <div class="top-filter">
+                <div class="filter">
+                    <span>Kurslar</span>
+                    <select name="courses" class="select ">
+                        <option value="all-courses">Barcha kurslar</option>
+                        <option value="matematika">Matematika</option>
+                    </select>
+                </div> <button class="add-button">Talaba qo'shish</button>
+            </div>
+            <div class="main">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
