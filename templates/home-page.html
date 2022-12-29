@@ -32,6 +32,18 @@
                 <td class="no-border"><a href="/delete-people/?id={{ p.pk }}" class="delete">O'chirish</a></td>
             </tr>
         {% endfor %}
+        <div class="model">
+            <button class="close">Close</button>
+            <form>
+                <label>I.F.SH</label>
+                <input type="text" placeholder="full_name">
+                <label>BRITHDAY</label>
+                <input type="text" placeholder="britday">
+                <label>Phone Number</label>
+                <input type="text" placeholder="phone number">
+                <button class="add" type="submit">Add people</button>
+            </form>
+        </div>
         
         
         
@@ -43,4 +55,10 @@
 
 
 </table>
+{% endblock %}
+
+
+
+{% block foot %}
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
