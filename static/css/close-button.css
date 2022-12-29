@@ -1,0 +1,99 @@
+.d-none {
+  display: none !important;
+}
+
+.showAnim {
+  animation-name: showAnimation;
+  animation-duration: 0.3s;
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.back {
+  background-color: rgba(0, 0, 0, 0.615);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.back .model {
+  left: 50%;
+  top: 50%;
+  padding: 80px 0;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 500px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.back .model h2 {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.back .model .close {
+  border-radius: 50%;
+  transform: rotateZ(45deg);
+  cursor: pointer;
+  background: white;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  text-align: center;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  color: black;
+  border: none;
+  font-size: 25px;
+  transition: 0.3s linear all;
+}
+.back .model .close:hover {
+  background-color: #cad0d6;
+}
+.back .model form {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.back .model form .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.back .model form .row div {
+  min-width: 120px;
+  display: inline-block;
+}
+.back .model form .row input {
+  border: 1px solid #cad0d6;
+  outline: none;
+  font-size: 15px;
+  height: 20px;
+  padding: 20px;
+}
+.back .model form .add {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6CB4EE;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.back .model form .add:hover {
+  cursor: pointer;
+  background-color: #3983bf;
+}
+
+/*# sourceMappingURL=close-button.css.map */

@@ -21,7 +21,7 @@ class Course(models.Model):
     teacher = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     title = models.CharField(max_length=256)
-    peoples = models.ManyToManyField(blank=False)
+    peoples = models.ManyToManyField(People, blank=False)
     start_time = models.TimeField()
 
     def __str__(self) -> str:

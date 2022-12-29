@@ -92,14 +92,18 @@ body #menu .left-side a .box {
   padding-left: 20px;
   gap: 15px;
   height: 50px;
-  border: 1px solid black;
+  border: 1px solid #cad0d6;
   margin: 10px;
   font-size: 20px;
+  transition: 0.5s linear all;
 }
 body #menu .left-side a .box:active {
   color: white !important;
   background-color: #6CB4EE;
   border: none !important;
+}
+body #menu .left-side a .box:hover {
+  border: 1px solid black;
 }
 body #menu .left-side a .active {
   color: white !important;
@@ -110,53 +114,6 @@ body #menu .right-side {
   width: 75%;
   height: 100vh;
   margin-top: 10px;
-}
-body #menu .right-side .top-filter {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-body #menu .right-side .top-filter .filter {
-  width: 89%;
-  border-radius: 3px;
-  padding: 10px;
-  height: 40px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-body #menu .right-side .top-filter .filter .select {
-  outline: none;
-  width: 200px;
-  height: 30px;
-  font-size: 15px;
-}
-body #menu .right-side .top-filter .add-button {
-  cursor: pointer;
-  padding: 10px;
-  border: none;
-  font-size: 16px;
-  border-radius: 0.25rem;
-  background-color: #198754;
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  transition: 0.1s linear all;
-}
-body #menu .right-side .top-filter .add-button:hover {
-  background-color: #137447;
-}
-body #menu .right-side .main {
-  border-radius: 3px;
-  padding: 10px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  height: 90vh;
-  overflow: scroll;
-}
-body #menu .right-side .main::-webkit-scrollbar {
-  display: none;
 }
 body .noselect {
   -webkit-touch-callout: none;
@@ -174,4 +131,4 @@ body .noselect {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=base.css.map */

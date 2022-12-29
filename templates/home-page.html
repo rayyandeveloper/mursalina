@@ -1,64 +1,8 @@
 {% extends 'base.html' %}
-{% load static %}
 
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/home-page.css' %}">
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
-{% endblock %}
 
 {% block content %}
-
-
-
-<table id="users-table">
-    <thead>
-        <tr>
-            <th class="ids">ID</th>
-            <th class="fish">F.I.SH</th>
-            <th>Tug'ilgan sana</th>
-            <th>Tefon raqam</th>
-            <th class="buttons"></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody><div class="scroll">
-        {% for p in peoples %}
-            <tr>
-                <td>{{ p.pk }}</td>
-                <td>{{ p.full_name }}</td>
-                <td>{{ p.birthday }}</td>
-                <td>{{ p.phone }}</td>
-                <td class="no-border"><a href="/update-people/?id={{ p.pk }}" class="edit">Taxrirlash</a></td>
-                <td class="no-border"><a href="/delete-people/?id={{ p.pk }}" class="delete">O'chirish</a></td>
-            </tr>
-        {% endfor %}
-        <div class="model">
-            <button class="close">Close</button>
-            <form>
-                <label>I.F.SH</label>
-                <input type="text" placeholder="full_name">
-                <label>BRITHDAY</label>
-                <input type="text" placeholder="britday">
-                <label>Phone Number</label>
-                <input type="text" placeholder="phone number">
-                <button class="add" type="submit">Add people</button>
-            </form>
-        </div>
-        
-        
-        
-    </div></tbody>
-
-    <!-- #ffc107 -->
-    <!-- #dc3545 -->
-
-
-
-</table>
-{% endblock %}
-
-
-
-{% block foot %}
-    <script src="{% static 'js/script.js' %}"></script>
+<h1>
+    Welcome to Home page
+</h1>
 {% endblock %}

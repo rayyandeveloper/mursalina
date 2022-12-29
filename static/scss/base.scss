@@ -14,7 +14,6 @@ body {
     height: 100vh;
     overflow: hidden;
 
-
     #cont {
         width: 100%;
         background-color: white;
@@ -104,6 +103,7 @@ body {
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
+            
             a {
                 color: black;
                 text-decoration: none;
@@ -118,15 +118,21 @@ body {
                     padding-left: 20px;
                     gap: 15px;
                     height: 50px;
-                    border: 1px solid black;
+                    border: 1px solid #cad0d6;
                     margin: 10px;
                     font-size: 20px;
+                    transition: .5s linear all;
 
                     &:active {
                         color: white !important;
                         background-color: $base-color;
                         // background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
                         border: none !important;
+                    }
+
+                    &:hover {
+                        border: 1px solid black;
+
                     }
                 }
 
@@ -145,64 +151,6 @@ body {
             height: 100vh;
             margin-top: 10px;
 
-            .top-filter {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-
-                .filter {
-                    width: 89%;
-                    border-radius: 3px;
-                    padding: 10px;
-                    height: 40px;
-                    background-color: white;
-                    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-
-                    .select {
-                        outline: none;
-                        width: 200px;
-                        height: 30px;
-                        font-size: 15px;
-                    }
-
-                }
-
-                .add-button {
-                    cursor: pointer;
-                    padding: 10px;
-                    border: none;
-                    font-size: 16px;
-                    border-radius: 0.25rem;
-                    background-color: #198754;
-                    color: white;
-                    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-                    transition: .1s linear all;
-
-                    &:hover {
-                        background-color: #137447;
-                    }
-                }
-            }
-
-            .main {
-                border-radius: 3px;
-                padding: 10px;
-                background-color: white;
-                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-                height: 90vh;
-                overflow: scroll;
-
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-
-                
-
-
-            }
         }
     }
 

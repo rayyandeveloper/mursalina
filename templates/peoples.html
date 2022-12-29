@@ -1,8 +1,87 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home-page.css' %}">
+<link rel="stylesheet" href="{% static 'css/close-button.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>
-    Welcome to Peoples page
-</h1>
+    <div class="top-filter">
+        <div class="filter">
+            <label for="courses">Fanlar</label>
+            <select name="courses" class="select" id="courses">
+                <option value="all-courses" selected>Barcha kurslar</option>
+                {% for s in subjects %}
+                    <option value="{{ s.name }}">{{ s.name }}</option>
+                {% endfor %}
+                <option value="matematika">Ingliz tili</option>
+            </select>
+            <span>Kurslar</span>
+            <select name="courses" class="select">
+                <option value="all-courses" selected>Barcha kurslar</option>
+                {% for c in courses %}
+                    <option value="{{ c.name }}">{{ c.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="add-button" id="open-modal">Talaba qo'shish</button>
+    </div>
+    <div class="main">
+        <div class="back d-none" id="modal">
+            <div class="model">
+                <button class="close" id="close">+</button>
+                <h2>Yangi o'quvchi qo'shish</h2>
+                <form method="GET">{% csrf_token %}
+                    <div class="row">
+                        <div>F.I.SH</div>
+                        <input type="text" placeholder="Abdurazzoq Abdusalomov" autofocus min="256">
+                    </div>
+                    <div class="row">
+                        <div>Tug'ilgan sana</div>
+                        <input type="date" placeholder="2006.04.02">
+                    </div>
+                    <div class="row">
+                        <div>Telefon raqam</div>
+                        <input type="text" placeholder="+998 33 393 25 80">
+                    </div>
+
+                    <button class="add" type="submit">Yangi qo'shish</button>
+                </form>
+            </div>
+        </div>
+
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th class="ids">ID</th>
+                    <th class="fish">F.I.SH</th>
+                    <th>Tug'ilgan sana</th>
+                    <th>Tefon raqam</th>
+                    <th class="buttons"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="scroll">
+                    {% for p in peoples %}
+                    <tr>
+                        <td>{{ p.pk }}</td>
+                        <td>{{ p.full_name }}</td>
+                        <td>{{ p.birthday }}</td>
+                        <td>{{ p.phone }}</td>
+                        <td class="no-border"><a href="/update-people/?id={{ p.pk }}" class="edit">Taxrirlash</a></td>
+                        <td class="no-border"><a href="/delete-people/?id={{ p.pk }}" class="delete">O'chirish</a></td>
+                    </tr>
+                    {% endfor %}
+                </div>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+
+{% block foot %}
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
