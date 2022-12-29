@@ -32,22 +32,59 @@
             <div class="model">
                 <button class="close" id="close">+</button>
                 <h2>Yangi o'quvchi qo'shish</h2>
-                <form method="GET">{% csrf_token %}
+                <form method="POST" id="create-people">{% csrf_token %}
                     <div class="row">
                         <div>F.I.SH</div>
-                        <input type="text" placeholder="Abdurazzoq Abdusalomov" autofocus min="256">
+                        <input type="text" name="full-name" placeholder="Abdurazzoq Abdusalomov" autofocus min="256">
                     </div>
                     <div class="row">
                         <div>Tug'ilgan sana</div>
-                        <input type="date" placeholder="2006.04.02">
+                        <input type="date" name="birthday" placeholder="2006.04.02">
                     </div>
                     <div class="row">
                         <div>Telefon raqam</div>
-                        <input type="text" placeholder="+998 33 393 25 80">
+                        <input type="tel" name="phone" placeholder="+998 33 393 25 80" maxlength="13">
                     </div>
 
                     <button class="add" type="submit">Yangi qo'shish</button>
                 </form>
+            </div>
+        </div>
+        <div class="back d-none" id="update-modal">
+            <div class="model">
+                <button class="close" id="close-update-model">+</button>
+                <h2>Yangi o'quvchi qo'shish</h2>
+                <form method="POST" id="update-people">{% csrf_token %}
+                    <input type="hidden" value="PUT" name="type">
+                    <input type="hidden" value="" name="id" id="id">
+                    <div class="row">
+                        <div>F.I.SH</div>
+                        <input type="text" name="full-name" placeholder="Abdurazzoq Abdusalomov" autofocus min="256" id="fish-input">
+                    </div>
+                    <div class="row">
+                        <div>Tug'ilgan sana</div>
+                        <input type="date" name="birthday" placeholder="2006.04.02" id="birthday-input">
+                    </div>
+                    <div class="row">
+                        <div>Telefon raqam</div>
+                        <input type="tel" name="phone" placeholder="+998 33 393 25 80" maxlength="13" id="phone-input">
+                    </div>
+
+                    <button class="add" type="submit">Yangilash</button>
+                </form>
+            </div>
+        </div>
+        <div class="back d-none" id="delete-modal">
+            <div class="model">
+                <button class="close" id="close-delete-model">+</button>
+                <h2>O'quvchini o'chirish</h2>
+                <div class="content">
+                    Haqiqatdan ham <span id="fn-delete"></span>ni <br> o'chirmoqchisiz?
+                </div>
+                <div class="buttons">
+                    <button class="bkq" id="back-button">Bekor qilish</button>
+                    <a href="#" id="url"><button class="delete" id="people-delete-button">O'chirish</button></a>
+                </div>
             </div>
         </div>
 
@@ -66,12 +103,12 @@
                 <div class="scroll">
                     {% for p in peoples %}
                     <tr>
-                        <td>{{ p.pk }}</td>
+                        <td>{{ forloop.counter }}</td>
                         <td>{{ p.full_name }}</td>
                         <td>{{ p.birthday }}</td>
                         <td>{{ p.phone }}</td>
-                        <td class="no-border"><a href="/update-people/?id={{ p.pk }}" class="edit">Taxrirlash</a></td>
-                        <td class="no-border"><a href="/delete-people/?id={{ p.pk }}" class="delete">O'chirish</a></td>
+                        <td class="no-border" onclick="openUpdateModal({'id' : '{{ p.id }}', 'full_name' : '{{ p.full_name }}', 'birthday' : `{{ p.birthday|date:'Y-m-d' }}`, 'phone' : '{{ p.phone }}', })"><div class="edit">Tahrirlash</div></td>
+                        <td class="no-border" onclick="openDeleteModal({'id' : '{{ p.id }}', 'full_name' : '{{ p.full_name }}'})"><div class="delete">O'chirish</div></td>
                     </tr>
                     {% endfor %}
                 </div>

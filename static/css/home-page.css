@@ -79,7 +79,8 @@
   border: 1px solid #cad0d6;
   padding-left: 10px;
 }
-.main #users-table tbody tr td a {
+.main #users-table tbody tr td div {
+  cursor: pointer;
   display: inline-block;
   padding: 10px;
   color: white;
@@ -87,18 +88,18 @@
   border-radius: 5px;
   transition: 0.2s linear all;
 }
-.main #users-table tbody tr td a.edit {
+.main #users-table tbody tr td div.edit {
   margin: 3px;
   background-color: #ffc107;
 }
-.main #users-table tbody tr td a.edit:hover {
+.main #users-table tbody tr td div.edit:hover {
   background-color: #c79602;
 }
-.main #users-table tbody tr td a.delete {
+.main #users-table tbody tr td div.delete {
   margin: 3px;
   background-color: #dc3545;
 }
-.main #users-table tbody tr td a.delete:hover {
+.main #users-table tbody tr td div.delete:hover {
   background-color: #cc0e21;
 }
 .main #users-table tbody tr .no-border {

@@ -58,87 +58,88 @@ $base-color: #80bff3;
         display: none;
     }
 
-#users-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 10px;
+    #users-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px;
 
-    thead {
-        tr {
-            margin-bottom: 10px !important;
+        thead {
+            tr {
+                margin-bottom: 10px !important;
 
-            .ids {
-                width: 100px;
+                .ids {
+                    width: 100px;
 
+                }
+
+                .fish {
+                    width: 400px;
+                }
+
+                th {
+                    font-family: sans-serif;
+                    font-size: 18px;
+                    // text-align: left;
+                }
+
+                .buttons {
+                    width: 100px
+                }
             }
+        }
 
-            .fish {
-                width: 400px;
-            }
 
-            th {
-                font-family: sans-serif;
+        tbody {
+            tr {
                 font-size: 18px;
-                // text-align: left;
-            }
+                margin-bottom: 10px !important;
 
-            .buttons {
-                width: 100px
-            }
-        }
-    }
-
-
-    tbody {
-        tr {
-            font-size: 18px;
-            margin-bottom: 10px !important;
-
-            &:hover {
-                background-color: $base-color;
-                color: white;
-            }
-
-            td {
-                border: 1px solid #cad0d6;
-                padding-left: 10px;
-
-                a {
-                    display: inline-block;
-                    padding: 10px;
+                &:hover {
+                    background-color: $base-color;
                     color: white;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    transition: .2s linear all;
                 }
 
+                td {
+                    border: 1px solid #cad0d6;
+                    padding-left: 10px;
 
-                a.edit {
-                    margin: 3px;
-                    background-color: #ffc107;
+                    div {
+                        cursor: pointer;
+                        display: inline-block;
+                        padding: 10px;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        transition: .2s linear all;
+                    }
 
-                    &:hover {
-                        background-color: #c79602;
+
+                    div.edit {
+                        margin: 3px;
+                        background-color: #ffc107;
+
+                        &:hover {
+                            background-color: #c79602;
+                        }
+                    }
+
+                    div.delete {
+                        margin: 3px;
+                        background-color: #dc3545;
+
+
+                        &:hover {
+                            background-color: #cc0e21;
+                        }
                     }
                 }
 
-                a.delete {
-                    margin: 3px;
-                    background-color: #dc3545;
-
-
-                    &:hover {
-                        background-color: #cc0e21;
-                    }
+                .no-border {
+                    border: none;
+                    background-color: #fff;
                 }
-            }
-
-            .no-border {
-                border: none;
-                background-color: #fff;
             }
         }
     }
-}
 
 }
