@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from .models import *
 
 def home(request):
-    context = {'page_name' : 'home'}
+
+    peoples = People.objects.all()
+
+    context = {'page_name' : 'home', 'peoples' : peoples}
     return render(request, 'home-page.html', context=context)
 
 

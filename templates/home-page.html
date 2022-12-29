@@ -1,14 +1,46 @@
 {% extends 'base.html' %}
+{% load static %}
 
-
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home-page.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="users">
-    <div class="user">
-        {{ page_name }}
-        <span>1</span>
-        <span>Abdusalomov Abdurazzoq</span>
-        <span>2006.04.02</span>
-    </div>
-</div>
+
+
+
+<table id="users-table">
+    <thead>
+        <tr>
+            <th class="ids">ID</th>
+            <th class="fish">F.I.SH</th>
+            <th>Tug'ilgan sana</th>
+            <th>Tefon raqam</th>
+            <th class="buttons"></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody><div class="scroll">
+        {% for p in peoples %}
+            <tr>
+                <td>{{ p.pk }}</td>
+                <td>{{ p.full_name }}</td>
+                <td>{{ p.birthday }}</td>
+                <td>{{ p.phone }}</td>
+                <td class="no-border"><a href="/update-people/?id={{ p.pk }}" class="edit">Taxrirlash</a></td>
+                <td class="no-border"><a href="/delete-people/?id={{ p.pk }}" class="delete">O'chirish</a></td>
+            </tr>
+        {% endfor %}
+        
+        
+        
+    </div></tbody>
+
+    <!-- #ffc107 -->
+    <!-- #dc3545 -->
+
+
+
+</table>
 {% endblock %}

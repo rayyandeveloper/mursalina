@@ -1,0 +1,60 @@
+#users-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px;
+}
+#users-table thead tr {
+  margin-bottom: 10px !important;
+}
+#users-table thead tr .ids {
+  width: 100px;
+}
+#users-table thead tr .fish {
+  width: 400px;
+}
+#users-table thead tr th {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+#users-table thead tr .buttons {
+  width: 100px;
+}
+#users-table tbody tr {
+  font-size: 18px;
+  margin-bottom: 10px !important;
+}
+#users-table tbody tr:hover {
+  background-color: #f8ecc7;
+}
+#users-table tbody tr td {
+  border: 1px solid #cad0d6;
+  padding-left: 10px;
+}
+#users-table tbody tr td a {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.2s linear all;
+}
+#users-table tbody tr td a.edit {
+  margin: 3px;
+  background-color: #ffc107;
+}
+#users-table tbody tr td a.edit:hover {
+  background-color: #c79602;
+}
+#users-table tbody tr td a.delete {
+  margin: 3px;
+  background-color: #dc3545;
+}
+#users-table tbody tr td a.delete:hover {
+  background-color: #cc0e21;
+}
+#users-table tbody tr .no-border {
+  border: none;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=home-page.css.map */

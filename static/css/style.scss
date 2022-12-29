@@ -5,13 +5,10 @@
     font-family: sans-serif;
 }
 
-
+$base-color: #6CB4EE;
 
 body {
-    // background: rgb(131,58,180);
-    // background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-color: $base-color;
 
     width: 100vw;
     height: 100vh;
@@ -127,16 +124,16 @@ body {
 
                     &:active {
                         color: white !important;
-                        background-color: #0093E9;
-                        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+                        background-color: $base-color;
+                        // background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
                         border: none !important;
                     }
                 }
 
                 .active {
-                    background-color: #0093E9;
-                    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-                    color: white;
+                    color: white !important;
+                    background-color: $base-color;
+                    // background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
                     border: none !important;
                 }
             }
@@ -195,7 +192,16 @@ body {
                 padding: 10px;
                 background-color: white;
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-                height: 100vh;
+                height: 90vh;
+                overflow: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                
+
+
             }
         }
     }
