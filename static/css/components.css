@@ -1,0 +1,18 @@
+.ortu-button {
+  color: crimson;
+  border-radius: 5px;
+  border: 1px solid crimson;
+  padding: 10px 15px;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.ortu-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: crimson;
+}
+.ortu-button:active {
+  background-color: #ae0728;
+}
+
+/*# sourceMappingURL=components.css.map */

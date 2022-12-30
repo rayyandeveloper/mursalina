@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST">{% csrf_token %}
+            <div>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Abdurazzoq" id="username" name="username"/>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                    placeholder="&SmallCircle;&SmallCircle;&SmallCircle;&SmallCircle;&SmallCircle;&SmallCircle;&SmallCircle;&SmallCircle;&SmallCircle;" />
+            </div>
+            <span>
+                <input  type="checkbox" id="checkbox" /><label for="checkbox">Show password</label>
+            </span>
+            <div class="center">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script>
+        let value = false
+        let checkbox = document.querySelector('#checkbox')
+
+        let password = document.querySelector('#password')
+
+        console.log('sss');
+        checkbox.addEventListener('change', (event)=>{
+            value = !value
+
+            value ? password.type = 'text' : password.type = 'password'
+        })
+
+    </script>
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+
+</html>

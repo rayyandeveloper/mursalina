@@ -9,6 +9,8 @@
     <title>Mursalina | Bosh sahifa</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/loader.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+
     {% block head %}
     {% endblock %}
 
@@ -39,7 +41,7 @@
             </div>
             <div class="col3">
                 <div class="profile">
-                    <div class="box"><a href="">M</a></div>
+                    <a href="{% url 'logout-page' %}"><div class="ortu-button noselect">Chiqish</div></a>
                 </div>
             </div>
         </div>
