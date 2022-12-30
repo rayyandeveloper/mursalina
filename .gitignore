@@ -5,3 +5,4 @@ media/
 *.bat
 db.sqlite3
 admin/
+*.map
