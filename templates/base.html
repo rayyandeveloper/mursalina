@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mursalina | Bosh sahifa</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loader.css' %}">
     {% block head %}
     {% endblock %}
 
@@ -15,6 +16,11 @@
 </head>
 
 <body>
+
+    <div class="loader">
+        <div class="lds-hourglass"></div>
+    </div>
+
     <div class="container" id="cont">
         <div class="row">
             <div class="col1">
@@ -99,6 +105,8 @@
 
     {% block foot %}
     {% endblock %}
+
+    <script src="{% static 'js/base.js' %}"></script>
 </body>
 
 </html>
