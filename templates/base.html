@@ -11,7 +11,7 @@
     {% block head %}
     {% endblock %}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" /> -->
 </head>
 
 <body>
@@ -63,6 +63,18 @@
                 <div class="box noselect {% if page_name == 'teachers' %} active {% endif %} ">
                     <span><i class="fas fa-chalkboard-teacher"></i></span>
                     <p>O'qituvchilar</p>
+                </div>
+            </a>
+            <a href="{% url 'subjects-page' %}">
+                <div class="box noselect {% if page_name == 'subjects' %} active {% endif %} ">
+                    <span><i class="fas fa-chalkboard-teacher"></i></span>
+                    <p>Fanlar</p>
+                </div>
+            </a>
+            <a href="{% url 'cources-page' %}">
+                <div class="box noselect {% if page_name == 'cources' %} active {% endif %} ">
+                    <span><i class="fas fa-chalkboard-teacher"></i></span>
+                    <p>Kurslar</p>
                 </div>
             </a>
             <a href="{% url 'trash-page' %}">

@@ -1,0 +1,110 @@
+.top-filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.top-filter .filter {
+  width: 89%;
+  border-radius: 3px;
+  padding: 10px;
+  height: 40px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.top-filter .filter .select {
+  outline: none;
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+}
+.top-filter .add-subject-button {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  background-color: #198754;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: 0.1s linear all;
+}
+.top-filter .add-subject-button:hover {
+  background-color: #137447;
+}
+
+.main {
+  border-radius: 3px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  height: 90vh;
+  overflow: scroll;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+.main #subjects-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px;
+}
+.main #subjects-table thead tr {
+  margin-bottom: 10px !important;
+}
+.main #subjects-table thead tr .ids {
+  width: 100px;
+}
+.main #subjects-table thead tr .fish {
+  width: 850px;
+}
+.main #subjects-table thead tr th {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+.main #subjects-table thead tr .buttons {
+  width: 100px;
+}
+.main #subjects-table tbody tr {
+  font-size: 18px;
+  margin-bottom: 10px !important;
+}
+.main #subjects-table tbody tr:hover {
+  background-color: #80bff3;
+  color: white;
+}
+.main #subjects-table tbody tr td {
+  border: 1px solid #cad0d6;
+  padding-left: 10px;
+}
+.main #subjects-table tbody tr td div {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.2s linear all;
+}
+.main #subjects-table tbody tr td div.edit {
+  margin: 3px;
+  background-color: #ffc107;
+}
+.main #subjects-table tbody tr td div.edit:hover {
+  background-color: #c79602;
+}
+.main #subjects-table tbody tr td div.delete {
+  margin: 3px;
+  background-color: #dc3545;
+}
+.main #subjects-table tbody tr td div.delete:hover {
+  background-color: #cc0e21;
+}
+.main #subjects-table tbody tr .no-border {
+  border: none;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=subjects.css.map */

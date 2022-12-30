@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/peoples.css' %}">
+<link rel="stylesheet" href="{% static 'css/subjects.css' %}">
 <link rel="stylesheet" href="{% static 'css/close-button.css' %}">
 {% endblock %}
 
@@ -15,7 +15,7 @@
                 {% for s in subjects %}
                     <option value="{{ s.name }}">{{ s.name }}</option>
                 {% endfor %}
-                <option value="matematika">Ingliz tili</option>
+                
             </select>
             <span>Kurslar</span>
             <select name="courses" class="select">
@@ -25,49 +25,34 @@
                 {% endfor %}
             </select>
         </div>
-        <button class="add-button" id="open-modal">Talaba qo'shish</button>
+        <button class="add-subject-button" id="open-modal">Fan qo'shish</button>
     </div>
     <div class="main">
-        <div class="back d-none" id="modal">
+        <div class="back d-none" id="add-subject-modal">
             <div class="model">
                 <button class="close" id="close">+</button>
-                <h2>Yangi o'quvchi qo'shish</h2>
+                <h2>Yangi fan qo'shish</h2>
                 <form method="POST" id="create-people">{% csrf_token %}
                     <div class="row">
-                        <div>F.I.SH</div>
-                        <input type="text" name="full-name" placeholder="Abdurazzoq Abdusalomov" autofocus min="256">
-                    </div>
-                    <div class="row">
-                        <div>Tug'ilgan sana</div>
-                        <input type="date" name="birthday" placeholder="2006.04.02">
-                    </div>
-                    <div class="row">
-                        <div>Telefon raqam</div>
-                        <input type="tel" name="phone" placeholder="+998 33 393 25 80" maxlength="13">
+                        <div>Nomi</div>
+                        <input type="text" name="name" placeholder="Kompyuter savodxonligi" autofocus min="256">
                     </div>
 
                     <button class="add" type="submit">Yangi qo'shish</button>
                 </form>
             </div>
         </div>
-        <div class="back d-none" id="update-modal">
+        <div class="back d-none" id="update-subject-modal">
             <div class="model">
-                <button class="close" id="close-update-model">+</button>
-                <h2>Yangi o'quvchi qo'shish</h2>
-                <form method="POST" id="update-people">{% csrf_token %}
+                <button class="close" id="close-update-modal">+</button>
+                <h2>Fan ma'lumotlarini yangilash</h2>
+                <form method="POST">{% csrf_token %}
                     <input type="hidden" value="PUT" name="type">
-                    <input type="hidden" value="" name="id" id="id">
+                    <input type="hidden" value="" name="id" id="id-input">
+                    
                     <div class="row">
-                        <div>F.I.SH</div>
-                        <input type="text" name="full-name" placeholder="Abdurazzoq Abdusalomov" autofocus min="256" id="fish-input">
-                    </div>
-                    <div class="row">
-                        <div>Tug'ilgan sana</div>
-                        <input type="date" name="birthday" placeholder="2006.04.02" id="birthday-input">
-                    </div>
-                    <div class="row">
-                        <div>Telefon raqam</div>
-                        <input type="tel" name="phone" placeholder="+998 33 393 25 80" maxlength="13" id="phone-input">
+                        <div>Nomi</div>
+                        <input type="text" name="name" placeholder="Kompyuter savodxonligi" autofocus min="256" id="update-subject-name">
                     </div>
 
                     <button class="add" type="submit">Yangilash</button>
@@ -77,7 +62,7 @@
         <div class="back d-none" id="delete-modal">
             <div class="model">
                 <button class="close" id="close-delete-model">+</button>
-                <h2>O'quvchini o'chirish</h2>
+                <h2>Fanni o'chirish</h2>
                 <div class="content">
                     Haqiqatdan ham <span id="fn-delete"></span>ni <br> o'chirmoqchisiz?
                 </div>
@@ -88,27 +73,27 @@
             </div>
         </div>
 
-        <table id="users-table">
+        <table id="subjects-table">
             <thead>
                 <tr>
                     <th class="ids">ID</th>
-                    <th class="fish">F.I.SH</th>
-                    <th>Tug'ilgan sana</th>
-                    <th>Tefon raqam</th>
+                    <th class="fish">Nomi</th>
                     <th class="buttons"></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <div class="scroll">
-                    {% for p in peoples %}
+                    {% for p in subjects %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ p.full_name }}</td>
-                        <td>{{ p.birthday }}</td>
-                        <td>{{ p.phone }}</td>
-                        <td class="no-border" onclick="openUpdateModal({'id' : '{{ p.id }}', 'full_name' : '{{ p.full_name }}', 'birthday' : `{{ p.birthday|date:'Y-m-d' }}`, 'phone' : '{{ p.phone }}', })"><div class="edit">Tahrirlash</div></td>
-                        <td class="no-border" onclick="openDeleteModal({'id' : '{{ p.id }}', 'full_name' : '{{ p.full_name }}'})"><div class="delete">O'chirish</div></td>
+                        <td>{{ p.name }}</td>
+                        <td class="no-border" onclick="openEditSubjectModal({'id':`{{ p.id }}`, 'name':`{{ p.name }}`})">
+                            <div class="edit">Tahrirlash</div>
+                        </td>
+                        <td class="no-border" onclick="openDeleteModal({'id':`{{ p.id }}`, 'name':`{{ p.name }}`})">
+                            <div class="delete">O'chirish</div>
+                        </td>
                     </tr>
                     {% endfor %}
                 </div>
@@ -120,5 +105,5 @@
 
 
 {% block foot %}
-<script src="{% static 'js/peoples.js' %}"></script>
+<script src="{% static 'js/subjects.js' %}"></script>
 {% endblock %}
